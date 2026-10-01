@@ -1,4 +1,5 @@
 /*
+EXERCICIO 1
 #include <stdio.h>
 
 int main(void) {
@@ -42,24 +43,6 @@ int main(void) {
 #include <stdio.h>
 
 int main(void) {
-    struct {
-        int horas;
-        int minutos;
-        int segundos;
-    } first_hor, second_hor, diferenca;
-
-    printf("Digite o primeiro horario (hh:mm:ss): ");
-    scanf("%d:%d:%d", &first_hor.horas, first_hor.minutos, first_hor.segundos);
-
-    printf("Digite a segunda hora (hh:mm:ss): ");
-    scanf("%d:%d:%d", second_hor.horas, second_hor.minutos, second_hor.segundos);
-
-    if (first_hor.horas < second_hor.horas) {
-        diferenca.horas = second_hor.horas - first_hor.horas;
-        
-        if (first_hor.minutos )
-    }
-
-
+    
     return 0;
 }
