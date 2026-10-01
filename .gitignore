@@ -1,0 +1,12 @@
+*.class
+*.exe
+*.o
+bin/
+out/
+build/
+oracleJdk*/
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
