@@ -1,5 +1,6 @@
 /*
 EXERCICIO 1
+
 #include <stdio.h>
 
 int main(void) {
@@ -39,6 +40,8 @@ int main(void) {
     return 0;
 }
 
+---------------------------------------------------
+
 EXERCICIO 2
 
 #include <stdio.h>
@@ -77,25 +80,113 @@ int main(void) {
 
     return 0;
 }
-*/
+
+-------------------------------------------
+
+EXERCICIO 3
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void) {
-    struct data {
+struct data {
         int dia;
         int mes;
         int ano;
     } data1, data2;
 
-    printf("Digite a primeira data (dd/mm/aaaa): ");
+int f(int ano, int mes) {
+    if (mes <= 2) {
+        return ano - 1;
+    }
+    return ano;
+}
+
+int g(int mes) {
+    if (mes <= 2) {
+        return mes + 13;
+    }
+    else {
+        return mes + 1;
+        }
+    }
+
+int calcular_N(struct data d) {
+    int f_valor = f(d.ano, d.mes);
+    int g_valor = g(d.mes);
+    return (1461 * f_valor) / 4 + (153 * g_valor) / 5 + d.dia;
+}
+
+int main(void) {
+        printf("Digite a primeira data (dd/mm/aaaa): ");
     scanf("%d/%d/%d", &data1.dia, &data1. mes, &data1.ano);
 
     printf("Digite a segunda data (dd/mm/aaaa): ");
     scanf("%d/%d/%d", &data2.dia, &data2.mes, &data2.ano);
 
-    
+    int n1 = calcular_N(data1);
+    int n2 = calcular_N(data2);
 
+    int diferenca = abs(n2 - n1);
+
+    printf("Número de dias de diferença: %d\n", diferenca);
+
+    return 0;
+}
+
+--------------------------------------
+
+EXERCICIO 4
+
+*/
+#include <stdio.h>
+
+struct data {
+    int dia;
+    int mes;
+    int ano;
+} data1;
+
+int f(int ano, int mes) {
+    if (mes <= 2) {
+        return ano -1;
+    }
+    return ano;
+}
+
+int g(int mes) {
+    if (mes <= 2) {
+        return mes + 13;
+    }
+    return mes + 1;
+}
+
+int calcular_N(struct data d) {
+    int f_valor = f(d.ano, d.mes);
+    int g_valor = g(d.mes);
+    return ((1461 * f_valor) / 4) + ((153 * g_valor) / 5) + d.dia; 
+}
+
+int main(void) {
+    printf("Digite a data (dd/mm/aaaa): ");
+    scanf("%d/%d/%d", &data1.dia, &data1.mes, &data1.ano);
+
+    int n = calcular_N(data1);
+
+    int D = (n - 621049) % 7;
+
+    char dias_semana[7][20] = {
+        "Domingo",
+        "Segunda-feira",
+        "Terça-feira",
+        "Quarta-feira",
+        "Quinta-feira",
+        "Sexta-feira",
+        "Sábado"
+    };
+
+    printf("O dia da semana é: %s\n", dias_semana[D]);
+
+    return 0;
 }
 
 
