@@ -1,4 +1,18 @@
 /*
+// Primeiro exemplo
+
+#define DIM 100
+int main(void)
+{
+int v[DIM], soma, *p;
+.
+.
+.
+soma = 0;
+for (p = &v[0]; p < &v[DIM]; p++)
+soma = soma + *p;
+
+--------------------------------------------
 //Exercício 1
 
 #include <stdio.h>
@@ -40,22 +54,3 @@ int main(void) {
 */
 
 // Exercicio 2
-
-#include <stdio.h>
-
-#define MAX 100
-
-void dois_maiores(int n, int v[MAX], int *pr, int *seg) {
-    *pr = v[0];
-    *seg = v[0];
-
-    if (v[i])
-
-
-    for (int i = 0; i < n; i++) {
-
-        if (v[i] > *pr) {
-            *seg = *pr;
-       
-    }
-}

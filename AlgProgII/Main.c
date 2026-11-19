@@ -1,30 +1,22 @@
 #include <stdio.h>
-#define MAX 100
+#include <stdlib.h>
 
-float soma(int n, float v[MAX]) {
-    if (n == 1) {
-        return v[0];
-    }
-    else
-        return soma(n - 1, v) + v[n - 1];
-}
+struct cel {
+    int chave;
+    struct cel *prox;
+};
 
-int main() {
-    float vetor[MAX];
-    int n;
+typedef struct cel celula;
 
-    printf("Digite a quantidade de elementos: ");
-    scanf("%d", &n);
+ celula *cria_lista(void) {
+    celula *lst = (celula *) malloc(sizeof(celula));
+    lst -> prox = NULL;
+    return lst;
+ }
 
-    printf("Digite os %d elementos:\n", n);
+ void imprime_lista(celula *lst) {
+
+    for (celula *p = lst -> prox; p != NULL; p = p -> prox)
+        printf("%d", p-> chave);
     
-    for (int i = 0; i < n; i++) {
-        printf("Elemento [%d]: ", i);
-        scanf("%f", & vetor[i]);
-    }
-    
-    float resultado = soma(n, vetor);
-    printf("A soma dos valores é: %.2f\n", resultado);
-
-    return 0;
-}
+ }
